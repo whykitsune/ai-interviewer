@@ -1,0 +1,13 @@
+fastapi
+uvicorn[standard]
+sqlalchemy
+aiosqlite
+pydantic[email]
+passlib[bcrypt]
+python-jose[cryptography]
+python-multipart
+python-dotenv
+gpt4all
+aioboto3
+types-aioboto3[s3]
+httpx
