@@ -33,8 +33,8 @@ export interface ApiError {
 }
 
 export interface PaginatedInterviews {
-    total: int;
-    page: int;
-    size: int;
+    total: number;
+    page: number;
+    size: number;
     items: Interview[];
 }
