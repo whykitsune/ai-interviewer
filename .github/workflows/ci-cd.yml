@@ -20,6 +20,14 @@ jobs:
         python -m pip install --upgrade pip
         pip install -r requirements.txt
         pip install pytest pytest-asyncio httpx pytest-cov
+        
+    - name: Create test .env
+      run: |
+        echo "DATABASE_URL=sqlite+aiosqlite:///:memory:" > .env
+        echo "SECRET_KEY=supersecret" >> .env
+        echo "ALGORITHM=HS256" >> .env
+        echo "ACCESS_TOKEN_EXPIRE_MINUTES=30" >> .env
+        echo "REFRESH_TOKEN_EXPIRE_DAYS=7" >> .env
 
     - name: Run Backend Tests
       run: python -m pytest --cov=app tests/
